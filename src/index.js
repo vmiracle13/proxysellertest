@@ -5,6 +5,7 @@ import { Routes, Route, BrowserRouter } from 'react-router-dom';
 
 import Layout from './components/Layout';
 import UsersList from './data-containers/UsersList';
+import Posts from './data-containers/Posts';
 import NoMatch from './data-containers/NoMatch';
 
 import store from './redux/store';
@@ -20,6 +21,7 @@ root.render(
         <BrowserRouter>
           <Routes>
             <Route exact path="/" element={<UsersList />} />
+            <Route path="/:userId/posts" element={<Posts />} />
             <Route element={<NoMatch />} />
           </Routes>
         </BrowserRouter>

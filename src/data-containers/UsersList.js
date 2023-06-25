@@ -32,7 +32,7 @@ const UserList = () => {
               <p className="my-0 px-2">{user.name}</p>
 
               <Stack gap={2} direction="horizontal" className='ms-auto'>
-                <a href="#" className="p-2 bg-secondary text-white rounded text-decoration-none">Posts</a>
+                <a href={`/${user.id}/posts`} className="p-2 bg-secondary text-white rounded text-decoration-none">Posts</a>
                 <Button variant="secondary">Albums</Button>
               </Stack>
             </ListGroup.Item>
