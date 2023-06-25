@@ -1,11 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { Provider } from "react-redux";
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
+
+import Layout from './components/Layout';
+import UsersList from './data-containers/UsersList';
+import NoMatch from './data-containers/NoMatch';
+
+import store from './redux/store';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
-import App from './App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <Layout>
+        <BrowserRouter>
+          <Routes>
+            <Route exact path="/" element={<UsersList />} />
+            <Route element={<NoMatch />} />
+          </Routes>
+        </BrowserRouter>
+      </Layout>
+    </Provider>
   </React.StrictMode>
 );
