@@ -1,14 +1,19 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import Stack from 'react-bootstrap/Stack';
 import Button from 'react-bootstrap/Button';
 import ListGroup from 'react-bootstrap/ListGroup';
 
+import Albums from '../components/Albums';
+
 import { fetchUsers } from "../redux/reducers/users";
+import { fetchAlbums, reset } from '../redux/reducers/albums';
 
 const UserList = () => {
+  const [isModalShown, setShowModal] = useState(false);
   const { users, status, error } = useSelector(state => state.users);
+  const albums = useSelector(state => state.albums);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -16,6 +21,14 @@ const UserList = () => {
       dispatch(fetchUsers());
     }
   }, [dispatch]);
+
+  const showModal = (userId) => {
+    dispatch(reset());
+    dispatch(fetchAlbums(userId));
+    setShowModal(true);
+  }
+
+  const closeModal = () => setShowModal(false);
 
   return (
     <Stack>
@@ -33,11 +46,15 @@ const UserList = () => {
 
               <Stack gap={2} direction="horizontal" className='ms-auto'>
                 <a href={`/${user.id}/posts`} className="p-2 bg-secondary text-white rounded text-decoration-none">Posts</a>
-                <Button variant="secondary">Albums</Button>
+                <Button variant="secondary" onClick={() => showModal(user.id)}>Albums</Button>
               </Stack>
             </ListGroup.Item>
           ))}
         </ListGroup>}
+
+        {isModalShown && (
+          <Albums {...albums} closeModal={closeModal} />
+        )}
       </div>
     </Stack >
   );
