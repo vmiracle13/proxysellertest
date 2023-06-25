@@ -12,7 +12,7 @@ const Albums = ({ albums, status, error, closeModal }) => (
 
     {status === 'failed' && <p>{error}</p>}
 
-    <h3 className="p-3">Albums for the chosen user:</h3>
+    <h3 className="p-3 text-center">Albums for the chosen user:</h3>
 
     <ListGroup as="ol" numbered className="p-3">
       {albums && albums?.length > 0 && albums.map(album => (

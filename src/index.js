@@ -22,7 +22,7 @@ root.render(
           <Routes>
             <Route exact path="/" element={<UsersList />} />
             <Route path="/:userId/posts" element={<Posts />} />
-            <Route element={<NoMatch />} />
+            <Route path="*" element={<NoMatch />} />
           </Routes>
         </BrowserRouter>
       </Layout>
