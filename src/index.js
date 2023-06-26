@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
 import { Provider } from "react-redux";
-import { Routes, Route, BrowserRouter } from 'react-router-dom';
+import { Routes, Route, HashRouter } from 'react-router-dom';
 
 import Layout from './components/Layout';
 const UsersList = React.lazy(() => import('./data-containers/UsersList'));
@@ -20,7 +20,7 @@ root.render(
   <React.StrictMode>
     <Provider store={store}>
       <Layout>
-        <BrowserRouter>
+        <HashRouter>
           <Routes>
             <Route exact path="/" element={
               <Suspense fallback={LoadingPage}>
@@ -34,7 +34,7 @@ root.render(
             } />
             <Route path="*" element={<NoMatch />} />
           </Routes>
-        </BrowserRouter>
+        </HashRouter>
       </Layout>
     </Provider>
   </React.StrictMode>
