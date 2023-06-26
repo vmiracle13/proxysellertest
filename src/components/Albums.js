@@ -5,10 +5,11 @@ import Button from 'react-bootstrap/Button';
 import ListGroup from 'react-bootstrap/ListGroup';
 
 import Modal from '../components/Modal';
+import LoadingComponent from './LoadingComponent';
 
 const Albums = ({ albums, status, error, closeModal }) => (
   <Modal closeModal={closeModal}>
-    {status === 'loading' && <p>Loading albums...</p>}
+    {status === 'loading' && <LoadingComponent items="albums"/>}
 
     {status === 'failed' && <p>{error}</p>}
 

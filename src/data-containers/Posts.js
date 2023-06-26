@@ -6,6 +6,7 @@ import { fetchPosts } from "../redux/reducers/posts";
 
 import Stack from 'react-bootstrap/Stack';
 import ListGroup from 'react-bootstrap/ListGroup';
+import LoadingComponent from '../components/LoadingComponent';
 
 const Posts = () => {
   const { userId } = useParams();
@@ -23,7 +24,7 @@ const Posts = () => {
       <div className="mx-auto">
         <h2 className='py-4 text-center'>Posts of the chosen user:</h2>
 
-        {status === 'loading' && <p>Loading posts...</p>}
+        {status === 'loading' && <LoadingComponent items="posts" />}
 
         {status === 'failed' && <p>{error}</p>}
 

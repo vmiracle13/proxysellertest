@@ -6,6 +6,7 @@ import Button from 'react-bootstrap/Button';
 import ListGroup from 'react-bootstrap/ListGroup';
 
 import Albums from '../components/Albums';
+import LoadingComponent from '../components/LoadingComponent';
 
 import { fetchUsers } from "../redux/reducers/users";
 import { fetchAlbums, reset } from '../redux/reducers/albums';
@@ -35,7 +36,7 @@ const UserList = () => {
       <div className="mx-auto">
         <h2 className='py-4 text-center'>Users list</h2>
 
-        {status === 'loading' && <p>Loading users...</p>}
+        {status === 'loading' && <LoadingComponent items="users" />}
 
         {status === 'failed' && <p>{error}</p>}
 
