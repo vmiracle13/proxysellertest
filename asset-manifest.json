@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/proxysellertest/static/css/main.2fb89c8f.css",
-    "main.js": "/proxysellertest/static/js/main.52b261fb.js",
+    "main.js": "/proxysellertest/static/js/main.06b6fce6.js",
     "index.html": "/proxysellertest/index.html",
     "main.2fb89c8f.css.map": "/proxysellertest/static/css/main.2fb89c8f.css.map",
-    "main.52b261fb.js.map": "/proxysellertest/static/js/main.52b261fb.js.map"
+    "main.06b6fce6.js.map": "/proxysellertest/static/js/main.06b6fce6.js.map"
   },
   "entrypoints": [
     "static/css/main.2fb89c8f.css",
-    "static/js/main.52b261fb.js"
+    "static/js/main.06b6fce6.js"
   ]
 }
