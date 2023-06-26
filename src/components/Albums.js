@@ -9,7 +9,7 @@ import LoadingComponent from './LoadingComponent';
 
 const Albums = ({ albums, status, error, closeModal }) => (
   <Modal closeModal={closeModal}>
-    {status === 'loading' && <LoadingComponent items="albums"/>}
+    {status === 'loading' && <div className="text-center"><LoadingComponent items="albums" /></div>}
 
     {status === 'failed' && <p>{error}</p>}
 
