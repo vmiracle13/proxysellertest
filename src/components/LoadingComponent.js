@@ -6,7 +6,7 @@ const LoadingComponent = ({ items }) => {
 };
 
 LoadingComponent.propTypes = {
-  items: PropTypes.array,
+  items: PropTypes.string,
 };
 
 export default LoadingComponent;
