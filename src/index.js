@@ -27,12 +27,12 @@ root.render(
                 <UsersList />
               </Suspense>
             } />
-            <Route path="https://vmiracle13.github.io/proxysellertest/#/:userId/posts" element={
+            <Route path="/:userId/posts" element={
               <Suspense fallback={LoadingPage}>
                 <Posts />
               </Suspense>
             } />
-            <Route path="https://vmiracle13.github.io/proxysellertest/#/*" element={<NoMatch />} />
+            <Route path="*" element={<NoMatch />} />
           </Routes>
         </HashRouter>
       </Layout>
