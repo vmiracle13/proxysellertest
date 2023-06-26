@@ -46,7 +46,7 @@ const UserList = () => {
               <p className="my-0 px-2">{user.name}</p>
 
               <Stack gap={2} direction="horizontal" className='ms-auto'>
-                <a href={`/${user.id}/posts`} className="p-2 bg-secondary text-white rounded text-decoration-none">Posts</a>
+                <a href={`/proxysellertest/#/${user.id}/posts`} className="p-2 bg-secondary text-white rounded text-decoration-none">Posts</a>
                 <Button variant="secondary" onClick={() => showModal(user.id)}>Albums</Button>
               </Stack>
             </ListGroup.Item>

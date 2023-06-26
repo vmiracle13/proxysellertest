@@ -9,11 +9,11 @@ import LoadingComponent from './LoadingComponent';
 
 const Albums = ({ albums, status, error, closeModal }) => (
   <Modal closeModal={closeModal}>
-    {status === 'loading' && <LoadingComponent items="albums"/>}
+    <h3 className="p-3 text-center">Albums for the chosen user:</h3>
+
+    {status === 'loading' && <div className="text-center"><LoadingComponent items="albums" /></div>}
 
     {status === 'failed' && <p>{error}</p>}
-
-    <h3 className="p-3 text-center">Albums for the chosen user:</h3>
 
     <ListGroup as="ol" numbered className="p-3">
       {albums && albums?.length > 0 && albums.map(album => (
